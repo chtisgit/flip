@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Flip Solver</title>
+		<meta name="viewport"
+	content="width=device-width,initial-scale=1">
+		<script src="flip.js"></script>
+	</head>
+	<body style="font-family:monospace;padding:10px" onload="set_size();clear_debug()">
+		<h1>Flip Solver</h1>
+		<hr>
+		<div>
+			Rastergr&ouml;&szlig;e:
+			<select id="size" onchange="clear_debug();set_size();">
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+		</div>
+
+		<div style="min-height: 300px;margin-top:15px">
+			<table id="tabul" style="height:400px" border="1">
+			</table>
+			<br>
+				<span style="vertical-align: baseline">
+				<button type="button" onclick="solve()">
+					Solve!
+				</button>
+				<button type="button" onclick="board_reset()">
+					Reset
+				</button>
+				<button type="button" onclick="invert()">
+					Invert
+				</button>
+				<button type="button" onclick="clear_debug()">
+					Clear Debug
+				</button>
+				<br>
+				<input type="checkbox" id="debug_checkbox">
+				<label style="font-family: sans;font-size:9pt">show debug info (slow!!)</label>
+				<input type="checkbox" onclick="change_gamemode(this)">
+				<label style="font-family: sans;font-size:9pt">enable game mode</label>
+				
+				</span>
+
+		</div>
+
+		<p>
+		Initialize the field as you like. <br>
+		To play the game, check the checkbox "enable game mode"<br>
+		You win, when all fields are white.<br>
+		To show internal data structures, check "debug mode"<br>
+		</p>
+
+		<div
+	   style="margin-top:15px;background-color:black;color:white;width:100%;min-height:300px;padding:5px;overflow-y:scroll;font-family:monospace">
+			<ul id="debug" style="list-style-type: none">
+			</ul>
+		</div>
+	</body>
+</html>
+
